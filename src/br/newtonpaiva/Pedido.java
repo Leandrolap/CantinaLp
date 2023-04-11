@@ -7,15 +7,21 @@ public class Pedido {
     Massa massa;
     Cliente cliente;
     List<String> ingrediente = new ArrayList<>();
+    public Double total = 0.0;
 
-    private Double calcula;
-
-    public Double Calcular(Double mas){
-        calcula = mas + 2.0;
-        return calcula;
+    public void Calcular(Double acres){
+       total= total + acres;
     }
 
     public void adIngredientes(String ingredienteadd){
         ingrediente.add(ingredienteadd);
+    }
+
+    public List<String> getIngrediente() {
+        return ingrediente;
+    }
+
+    public void setIngrediente(List<String> ingrediente) {
+        this.ingrediente = ingrediente;
     }
 }

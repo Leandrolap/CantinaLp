@@ -14,25 +14,37 @@ public class Cantina {
 
         Pedido ped = new Pedido();
 
+        ped.total = VMassa;
+
         int opcao = 0;
         while (opcao != 5){
             opcao = Integer.parseInt(JOptionPane.showInputDialog("Informe o valor da massa: \n1-Bacon, \n2-Mussarela, \n3-Tomate, \n4-Queijo, \n5-Sair"));
 
             switch (opcao){
                 case 1:
-                    ped.Calcular(VMassa);
+                    ped.Calcular(2.0);
                     ped.adIngredientes("Bacon");
+                    break;
                 case 2:
-                    ped.Calcular(VMassa);
+                    ped.Calcular(2.0);
                     ped.adIngredientes("Mussarela");
+                    break;
                 case 3:
-                    ped.Calcular(VMassa);
+                    ped.Calcular(2.0);
                     ped.adIngredientes("Tomate");
+                    break;
                 case 4:
-                    ped.Calcular(VMassa);
+                    ped.Calcular(2.0);
                     ped.adIngredientes("Queijo");
+                    break;
                 case 5:
-                    System.out.println("Pedido Cancelado");
+                    ped.getIngrediente();
+
+                    for (int i = 0; i < ped.ingrediente.size(); i++){
+
+                    }
+                    System.out.println(NCliente + ", " + "Você pediu " + Massa + " " + "no valor de R$" + ped.total + " " + "com os ingredientes: " + ped.getIngrediente());
+                    break;
             }
         }
     }
