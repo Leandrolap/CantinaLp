@@ -1,5 +1,7 @@
 package br.newtonpaiva;
 
+import com.sun.jdi.event.ExceptionEvent;
+
 import javax.swing.*;
 
 public class Cantina {
@@ -43,7 +45,12 @@ public class Cantina {
                     for (int i = 0; i < ped.ingrediente.size(); i++){
 
                     }
-                    System.out.println(NCliente + ", " + "Você pediu " + Massa + " " + "no valor de R$" + ped.total + " " + "com os ingredientes: " + ped.getIngrediente());
+                    try{
+                        System.out.println(NCliente + ", " + "Você pediu " + Massa + " " + "no valor de R$" + ped.total + " " + "com os ingredientes: " + ped.getIngrediente());
+                    }catch (Exception ex){
+                        System.out.println("Algo deu errado. Tente novamente");
+                    };
+
                     break;
             }
         }
